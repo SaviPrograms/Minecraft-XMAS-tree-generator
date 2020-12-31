@@ -1,0 +1,195 @@
+/* Importy */
+@font-face {
+    font-family: 'Minecraft';
+    src: url('res/fonts/subset-Minecraft-PL-Font.woff2') format('woff2'),
+        url('res/fonts/subset-Minecraft-PL-Font.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pixels';
+    src: url('res/fonts/fsex3021-webfont.woff2') format('woff2'),
+        url('res/fonts/fsex3021-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Główne elementy */
+:root {
+    --col-background-main: rgb(41, 41, 41);
+    --col-font-main: rgb(224, 224, 224);
+    --col-background-top: rgba(255, 255, 255, 0.034);
+    --col-accent-light: rgb(88, 255, 22);
+    --col-accent-dark: rgb(43, 109, 17);
+
+    font-family: Minecraft;
+    font-size: 16px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    transition: all .1s;
+}
+
+/* Elementy strony */
+body {
+    height: 100vh;
+    width: 100vw;
+
+    display: grid;
+    grid-template-areas:
+        'top top'
+        'left right'
+        'output right'
+        'output bottom';
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto 3fr 1fr auto;
+    grid-gap: 0.5em;
+
+    background-color: var(--col-background-main);
+    color: var(--col-font-main);
+
+    font-size: 2em;
+}
+   
+body>* {
+    padding: .5rem;
+
+    background-color: var(--col-background-top);
+
+    border-radius: .4rem;
+
+    min-width: 0;
+    min-height: 0;
+}
+
+header {
+    grid-area: top;
+    
+    color: var(--col-accent-light);
+    
+    font-size: 2em;
+    font-family: "Pixels";
+}
+
+#choose {
+    grid-area: left;
+    overflow-y: scroll;
+
+}
+
+#render {
+    grid-area: right;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+#output {
+    grid-area: output;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 0;
+    overflow: hidden;
+}
+
+#output>div:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 1em;
+}
+
+#kwota{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--col-accent-dark);
+    font-size: 4em; 
+    line-height: 1em;
+    text-align: center;
+    padding: 0 .3em;
+}
+
+footer {
+    grid-area: bottom;
+}
+
+/* Elementy ogólne */
+a{
+    color: var(--col-accent-dark);
+}
+
+a:hover{
+    color: var(--col-accent-light);
+}
+
+h1{
+    color: var(--col-accent-light);
+}
+
+/* Klasy ogólne */
+.row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: .5em;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--col-background-top) transparent;
+
+    overflow-x: scroll;
+    overflow-y: auto;
+
+    width: 100%;
+
+    border: solid 2px var(--col-background-top);
+    border-radius: 0.2rem;
+
+    margin: .5em 0;
+    padding: .5em;
+}
+
+.row::-webkit-scrollbar{
+    background-color: transparent;
+}
+
+.row::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.row::-webkit-scrollbar-thumb{
+    background-color: var(--col-background-top);
+}
+
+
+.row>*{
+    width: 6rem;
+    height: 6rem;
+    min-width: 6rem;
+
+    border:solid var(--col-accent-light);
+    border-width: 0px;
+    border-radius: 0.2rem;
+
+    background-color: var(--col-background-top);
+    padding: .2em;
+
+    overflow: hidden;
+}
+
+.row>input[type=color]{
+    margin: 0;
+    padding: 0;
+}
+
+.row>input[type=color]::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url("res/images/color.png");
+}

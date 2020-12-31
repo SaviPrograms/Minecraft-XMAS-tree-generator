@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sklep świąteczny</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>Minecraftowy Sklep Choinek</header>
+        <section id="choose">
+            <div class="row">
+                <img src="res/images/oak_leaves.png" alt="" onclick="change(this, leavesType, leavesType.options.oak)">
+                <img src="res/images/birch_leaves.png" alt="" onclick="change(this, leavesType, leavesType.options.birch)">
+                <img src="res/images/spruce_leaves.png" alt="" onclick="change(this, leavesType, leavesType.options.spruce)">
+                <img src="res/images/acacia_leaves.png" alt="" onclick="change(this, leavesType, leavesType.options.acacia)">
+                <img src="res/images/jungle_leaves.png" alt="" onclick="change(this, leavesType, leavesType.options.jungle)">
+                <img src="res/images/dark_oak_leaves.png" alt="" onclick="change(this, leavesType, leavesType.options.dark)">
+                <img src="res/images/wool.png" alt="" onclick="change(this, leavesType, leavesType.options.wool)">
+                <input type="color" name="" id="" oninput="liscie.updateColor(this.value)">
+            </div>
+            <div class="row">
+                <img src="res/images/oak_log.png" alt="" onclick="change(this, logType, logType.options.oak)">
+                <img src="res/images/birch_log.png" alt="" onclick="change(this, logType, logType.options.birch)">
+                <img src="res/images/spruce_log.png" alt="" onclick="change(this, logType, logType.options.spruce)">
+                <img src="res/images/acacia_log.png" alt="" onclick="change(this, logType, logType.options.acacia)">
+                <img src="res/images/jungle_log.png" alt="" onclick="change(this, logType, logType.options.jungle)">
+                <img src="res/images/dark_oak_log.png" alt="" onclick="change(this, logType, logType.options.dark)">
+                <img src="res/images/crimson_stem.png" alt="" onclick="change(this, logType, logType.options.crimson)">
+                <img src="res/images/warped_stem.gif" alt="" onclick="change(this, logType, logType.options.warped)">
+                <img src="res/images/stripped_oak_log.png" alt="" onclick="change(this, logType, logType.options.stripped_oak)">
+                <img src="res/images/stripped_birch_log.png" alt="" onclick="change(this, logType, logType.options.stripped_birch)">
+                <img src="res/images/stripped_spruce_log.png" alt="" onclick="change(this, logType, logType.options.stripped_spruce)">
+                <img src="res/images/stripped_acacia_log.png" alt="" onclick="change(this, logType, logType.options.stripped_acacia)">
+                <img src="res/images/stripped_jungle_log.png" alt="" onclick="change(this, logType, logType.options.stripped_jungle)">
+                <img src="res/images/stripped_dark_oak_log.png" alt="" onclick="change(this, logType, logType.options.stripped_dark)">
+                <img src="res/images/stripped_crimson_stem.png" alt="" onclick="change(this, logType, logType.options.stripped_crimson)">
+                <img src="res/images/stripped_warped_stem.png" alt="" onclick="change(this, logType, logType.options.stripped_warped)">
+                <img src="res/images/wool.png" alt="" onclick="change(this, logType, logType.options.wool)">
+                <input type="color" name="" id="" oninput="drewno.updateColor(this.value)">
+            </div>
+            <div class="row">
+                <img src="res/images/zlBombka.jpg" alt="" onclick="change(this, bulbType, bulbType.options.gold)">
+                <img src="res/images/bulb_cyan.jpg" alt="" onclick="change(this, bulbType, bulbType.options.cyan)">
+                <img src="res/images/bulb_orange.jpg" alt="" onclick="change(this, bulbType, bulbType.options.orange)">
+                <img src="res/images/bulb_pink.jpg" alt="" onclick="change(this, bulbType, bulbType.options.pink)">
+                <img src="res/images/bulb_red.jpg" alt="" onclick="change(this, bulbType, bulbType.options.red)">
+            </div>
+        </section>
+        <canvas id="render">
+        </canvas>
+        <section id="output">
+            <div>Masz do zapłacenia:</div>
+            <div id="kwota">60zł</div>
+        </section>
+        <footer>
+            Made by: <a href="mailto:serweryn123@gmail.com">Seweryn Woliński</a>
+        </footer>
+        <script src="res/three.js"></script>
+        <script src="classes.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
